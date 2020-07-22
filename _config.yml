@@ -1,0 +1,20 @@
+# Site settings
+author: Aaron Goen
+title: Notes on Development
+header-img: img/home-bg.png
+email: aarongoen2.0@gmail.com
+copyright_name: Aaron Goen
+description: > # this means to ignore newlines until "baseurl:"
+  Musings of a Musician on Software Development
+baseurl: "" # the subpath of your site, e.g. /blog
+twitter_username: 
+github_username:  aarongoen
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]

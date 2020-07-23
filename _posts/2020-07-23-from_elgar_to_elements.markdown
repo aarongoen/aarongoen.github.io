@@ -1,10 +1,11 @@
 ---
 layout: post
 title:      "From Elgar to Elements"
-date:       2020-07-23 16:00:17 +0000
+date:       2020-07-23 12:00:17 -0400
 permalink:  from_elgar_to_elements
 ---
 
+(https://www.dropbox.com/s/f715scul4gbgqej/Aaron%2C%20at%20STA%20keydesk%2C%20mirror.JPG?dl=0) 
 
 As I embark upon my journey into the field of software engineering, I hear the bracing strains of Edward Elgar’s Pomp and Circumstance #1 march in my head. You know, Edward Elgar, the composer of THE graduation march for high schools and universities? As a professional musician and a fan of Elgar, I thought naming my first blog post after him and my current course of study, including HTML elements, would be apropo. I feel as if I am graduating from one career/chapter in my life and beginning my travels to another. But how did I get here?
 

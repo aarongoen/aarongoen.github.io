@@ -1,0 +1,26 @@
+---
+layout: post
+title:      "How do I create a website? Understanding MVCs"
+date:       2020-11-14 20:06:10 +0000
+permalink:  how_do_i_create_a_website_understanding_mvcs
+---
+
+
+Well, you've done it. You have a basic understanding of object-oriented programming in Ruby; You can navigate Active Record and grasp the relationships between SQLITE3. "Can I build a website yet?" you ask. Enter Sinatra. Built with Ruby, it allows us to create an MVC which is at the heart of a web application. "What is an MVC?" you ask. It stands for Model View Controller. 
+
+Imagine yourself sitting at your computer and you go to a website like SignUpGenius. You log in with your name, email, and a password. You click "Create a Sign Up." You fill in "Title of Sign Up" and select a group to associate with the sign up from the drop down menu. Then you click, "Save and Continue."
+
+What's happening behind the scenes? Well, when you type in the website name in the browser, your computer asks another computer to send back a page to look at. Just like you and I speak English, your browser speaks HTTP. Your browser sends an HTTP request to the server, the computer with the application and information. This is when the Controller in the application for the website springs into action. It receives the request and sends your browser the information to render the home page to you. It does this by recognizing your browser's request, searching through its View files, and sending back a View file that renders the home page. First contact!
+
+So, we've mentioned a View and the Controller. We can think of the Controller as central command. It receives information and decides what to do with it. When you go to the SignUpGenius website, you are asking the server to render a View of the homepage. We can think of the View as a file that renders the content to your browser. It contains some of the text you see. It has links to other pages on the website, including a "Create a Sign Up" link. When you click on it, you trigger your browser to send a 'get' request to the server to render the sign up page. You're an active member of your community though. You already have an account, so you click on the Login link instead. Again, behind the curtain, when you click on the "Login" link, your browser sends a message ('get' request) to the server asking it to render a view of the log in page. You're brought to the sign up page via the route: "https://www.signupgenius.com/index.cfm?go=w.Welcome" The part of this URI, "/index.cfm?go=w.Welcome", is called the route. Back at the server, the controller receives the 'get' request to view the log in page, referred to by the route: "https://www.signupgenius.com/index.cfm?go=w.Welcome#/login". That route is associated with the View file called "/index". You can then type in your name and email address into this form. Your browser may already have filled the form out. How does it remember? More on that later. Anyway, after you fill out the form and click "Login", your browser sends another get request to the server who receives the filled-in form and checks to see if it has an email and password that match what it has stored. If so, it logs you in. 
+
+"So wait, I don't think you've talked about the Model yet," you say. You're right. Well, we haven't gotten started creating any sign-ups yet. 
+!["Patience, Daniel-San"](https://memegenerator.net/instance/78372464/mr-miyagi-wax-patience-daniel-san) So, you've logged in. You've clicked on "Create a Sign Up." You fill in the blanks; {"Title of Sign Up" with=> "Princess's Birthday Party", "Group" with=> "Princess's Friends", etc.} After you've clicked through each of the pages with "Save and Continue", and you hit the final "Save" button, all of the information you have filled out gets sent to the server via a 'post' request and is handled by the controller through Active Record. The Models manage database relationships such as users (such as yourself with your SignUpGenius account), sign_ups, slots, groups, etc. The User Model would handle and store information about you, such as your email, password, and sign_ups. The SignUp Model would handle and store information like who created the sign_up (you), date, time, slots. So the Models don't just store information pertinent to them but also configure and handle the relationships between themselves, just what you might expect from Ruby's object oriented system.  
+
+Here's a drawing of how the relationship between Model, View, and Controller may be visualized:
+
+![MVC image](https://www.mvps.net/docs/wp-content/uploads/2019/06/mvc.jpg)
+
+So is that all there is to creating a website? Well, no, but this ecosystem is at the heart of a web based application. This is what allows the information and communication between you and the server to spring into action. So, what next? I found that the [Corneal gem](https://github.com/thebrianemory/corneal) significantly reduced my anxiety of trying to create a web application from scratch. Once you have an idea of what domain model you would like to create, the corneal gem will populate the typical files, code, and folders for you. Thank you, Brian Emory (a Flatiron grad!) for making our lives so much easier! Happy coding!
+
+

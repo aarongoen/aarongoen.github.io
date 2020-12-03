@@ -5,7 +5,7 @@ date:       2020-12-03 10:03:42 -0500
 permalink:  dont_mess_with_my_stuff_user_authentication_in_sinatra
 ---
 
-![selfish panda](https://tenor.com/view/dont-touch-panda-gif-8529679)
+![](https://tenor.com/view/dont-touch-panda-gif-8529679)
 
 I have been working on building a web app to help folks request food from a foodbank. It wasn't until I was in my assessment interview that I ran into a few unfortunate blindspots. A user could alter another's information! In my previous project which had a command line interface, none of the elements of logging in, sessions, or persistence factored in. This time around, I didn't take into account that a user could access other users' information via the browser. 
 

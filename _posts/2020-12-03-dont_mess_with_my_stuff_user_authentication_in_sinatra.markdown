@@ -23,6 +23,8 @@ The `current_user` method searches the User model for the user instance which ma
 
 But I think I would be remiss to be talking about authentication without mentioning the bcrypt gem. We can protect the security of our users' passwords by using the bcrypt gem. It allows a simple password, such as 'password' (Hackers have libraries that can crack easy passwords like that so please be more creative!) to be coded into a long string (think 50 to 70) of characters . In addition, it is salted, which means that there are some extra characters added onto the original password before it's encrypted. This partners with ActiveRecord with the method `has_secure_password` which can be included in the User class. The `has_secure_password` makes sure that the new user includes a password on creation and that its length is equal to or less than 72 bytes. 
 
+Futhermore, when the user enters their password, we need to check the encrypted password. We use the authenticate method, i.e. `@user.authenticate(params[:password]` to check the password the user typed in. We can send the user to a different page with an error message if their password is incorrect. 
+
 And that about covers it! 
 ![lucy relieved](https://media.giphy.com/media/t22XfyAwh0Qla/giphy.gif) 
 We have a responsibility as developers to keep our clients' information safe. Ensuring that noone except for the authorized, logged-in, users should be able to see and edit their own information is critical to maintaining the information our clients entrust to us. 

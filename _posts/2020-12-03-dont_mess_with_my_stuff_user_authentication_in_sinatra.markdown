@@ -5,14 +5,14 @@ date:       2020-12-03 10:03:42 -0500
 permalink:  dont_mess_with_my_stuff_user_authentication_in_sinatra
 ---
 
-![](https://tenor.com/view/dont-touch-panda-gif-8529679)
+![don't touch panda](https://media1.tenor.com/images/7e6749d986211b8a7d55b0190a58204a/tenor.gif)
 
 I have been working on building a web app to help folks request food from a foodbank. It wasn't until I was in my assessment interview that I ran into a few unfortunate blindspots. A user could alter another's information! In my previous project which had a command line interface, none of the elements of logging in, sessions, or persistence factored in. This time around, I didn't take into account that a user could access other users' information via the browser. 
 
 So, a little background first: My app, called "Foodbank" has the domain model of one side of a foodbank; The user can make, edit, or delete a food request. (Further down the line, I would like to add donor and donations models.) So, my problem was that once a user had signed up and/ logged in, they could do anything they wanted with anyone's food requests! What to do?
 
 This is where the helper methods `current_user` and `logged_in?` come to the rescue!
-![two dogs to the rescue](https://media.giphy.com/media/l2JI1c35zEOg0A5Y4/giphy.gif)
+![two dogs to the rescue](https://i.giphy.com/media/l2JI1c35zEOg0A5Y4/giphy.webp)
 These handy helpers which live in the Application Controller are ready to jump in to work in the other controllers and in the views. 
 
 The `logged_in?` method checks to see if the user's id is incorporated into the session hash, i.e. `def logged_in? !!session[:user_id]` We use the 'double-bang' operator, i.e. '!!' to create a double negative validation of our question, "Is the user's id not not in the session hash?" Some critical locations for including this method in my app are:

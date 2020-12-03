@@ -12,7 +12,7 @@ I have been working on building a web app to help folks request food from a food
 So, a little background first: My app, called "Foodbank" has the domain model of one side of a foodbank; The user can make, edit, or delete a food request. (Further down the line, I would like to add donor and donations models.) So, my problem was that once a user had signed up and/ logged in, they could do anything they wanted with anyone's food requests! What to do?
 
 This is where the helper methods `current_user` and `logged_in?` come to the rescue!
-![two dogs to the rescue](https://tenor.com/view/dont-touch-panda-gif-8529679)
+![two dogs to the rescue](https://media.giphy.com/media/l2JI1c35zEOg0A5Y4/giphy.gif)
 These handy helpers which live in the Application Controller are ready to jump in to work in the other controllers and in the views. 
 
 The `logged_in?` method checks to see if the user's id is incorporated into the session hash, i.e. `def logged_in? !!session[:user_id]` We use the 'double-bang' operator, i.e. '!!' to create a double negative validation of our question, "Is the user's id not not in the session hash?" Some critical locations for including this method in my app are:

@@ -39,7 +39,7 @@ for each
             });
             this.renderPieces();
         })
-				```
+```
 This iterates over the data returned (The data doesn't have to be called 'data'. It can be called anything, by the way, like `pieces`, for example.). It instantiates frontend objects (called 'instances' in Ruby). Then, with that new array of pieces it creates it calls the function 'renderPieces()'.
 * Include a `.catch`.*
 'There's always a catch!' Well, let's hope so! I mean, include a `.catch` method, which can render an error in the browser if there's a problem with the fetch request, i.e. `.catch(err => alert(err))` This shows a pop-up message in the browser with the error. So, in toto:
@@ -77,7 +77,7 @@ document.querySelectorAll('.comment-form').forEach((textbox) => {
                 e.target.reset()
                 })
         })
-				```
+```
 				
 This listens to the submit button of the comment form. At the click (event), this procedure prevents the page from reloading, i.e. `e.preventDefault();`, finds the id of the submit button's (target's) piece. Then, it sets the text value of that comment by using the text and newly found piece_id (parent object id). It sends that information (`data`) to the submitComment function and clears (`e.target.reset()`) the comment form. 
 
@@ -122,7 +122,7 @@ I waited to explain the update fetch request until after the create one, because
                  .catch(err => alert(err))
             })
             }
-	```
+```
 
 You'll notice the create and update actions are similar. The difference is in the route, i.e. it includes `${currentPiece.id}`, the method: 'PATCH', and, of course, the body content is different). Finally, we come to... .
 
@@ -145,7 +145,7 @@ This listener calls the deleteComment function which gets the comment's id and i
                 e.target.parentElement.remove()
               });
           }
-					```
+```
 					
 So, of course, there are a few more hoops to accomplish the same basic CRUD functions than in Ruby, BUT JavaScript allows for more customization AND is much quicker for the user. The user doesn't have to wait for the page to refresh for all actions. It makes for a much better user experience. 
 

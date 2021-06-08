@@ -51,7 +51,8 @@ So this function called `createPiece` in the pieceActions.js file in the actions
 
 The dayReducer takes care of updating the state to reflect what happened in the backend. Reducers need to have an initial state be declared. I did that like so: `const reduceDay = (state = {days: []}, action) => {}`. This function declares state as an empty array called 'days'. It also takes in the action `ADD_PIECE`. Since I'm going to want this function to respond to different actions like fetching the days and showing a day, I used a `switch` statement: 
 
-```const reduceDay = (state = {days: []}, action) => {
+```
+const reduceDay = (state = {days: []}, action) => {
     switch(action.type) {
         case "FETCH_DAYS_SUCCESS":
             return action.payload
@@ -67,19 +68,22 @@ The dayReducer takes care of updating the state to reflect what happened in the 
         default:
             return state;
     }
-}```
+}
+```
 		
 
 I had to create the store. I created a redux folder and a store.js file in it . Then I imported the code for it like so: `import {createStore} from 'redux';` In my index.js file, I `import store from './redux/store';`. Then I wrapped my `<App />` in the store to give all components access to the store:
 
-```ReactDOM.render(
+```
+ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
-);```
+);
+```
 
 
 		

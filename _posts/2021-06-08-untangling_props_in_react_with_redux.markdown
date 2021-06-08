@@ -45,7 +45,7 @@ export const createPiece = (piece, day_id) => {
             .catch((err) => console.log(err))
         }
     }
-````
+```
 		
 So this function called `createPiece` in the pieceActions.js file in the actions folder (which lives in the redux folder) takes the new piece instance from the PieceForm, and its corresponding day_id, and makes a POST fetch request to the backend. If it's successfully instantiated in the backend, then that same data is dispatched to an `ADD_PIECE` function in the dayReducer.
 

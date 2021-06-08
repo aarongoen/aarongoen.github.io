@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Untangling Props in React with Redux"
-date:       2021-06-08 15:20:43 +0000
+date:       2021-06-08 11:20:43 -0400
 permalink:  untangling_props_in_react_with_redux
 ---
 

@@ -9,11 +9,11 @@ permalink:  untangling_props_in_react_with_redux
 Trying to organize and keep track of state in React can get tricky. One way to make this process easier is to use Redux to keep track of state globally.
 
 I built an app which helps church music directors plan music according to liturgical day. So, for example, if the user would like to discover new choral music appropriate to the bible readings for the Sunday before Christmas (also known as Advent 4), they could find suggested pieces which quote or reference those bible readings for that day. The user can add new pieces to that list as well. Here's a simplified version of the schema: 
-![](https://www.dropbox.com/s/27hgy9s6h23pjc0/music%20planner.png?dl=0)
+![musicPlannerSchema](https://www.dropbox.com/s/27hgy9s6h23pjc0/music%20planner.png?dl=0)
 
 
 With my components structured like so: 
-![](https://www.dropbox.com/s/ulte0jitlmmbe08/music%20planner%20components.png?dl=0)
+![musicPlannerComponents](https://www.dropbox.com/s/ulte0jitlmmbe08/music%20planner%20components.png?dl=0)
 
 You can see that the pieces inherit from the DayShow component. It's possible that DayShow could inherit from DaysList but in order to expand the capabilities of the app to include a PieceEdit component for example, it would be much easier to have the state live in a separate location. This would be the store.
 

@@ -91,6 +91,8 @@ With the switch statement, you can have the dayReducer respond to your typical C
 
 I found the `ADD_PIECE` action particularly challenging. Originally, I thought I would search for the day in question and insert a new piece in its nested pieces array. It turns out that, after some help from a colleague (Thanks again, Becca!), I needed to find the day, create a new array of days minus the day in question, concatenate the new piece onto the pieces array in the day in question, i.e. `oldDay`, then set this `newPieceArray` to the piece array of `oldDay`. Then I had to return the state using the spread operator (so as not to directly set the state but rather modify a copy of state) and tack on the modified day, i.e. `oldDay.pieces` onto the `filteredDays`.
 
+Previously, I had been instantiating new piece instances to the backend but it wasn't getting rendered to the DOM. Now that I fixed my reducer function the state is getting updated and the DOM rerenders. I hope this helps you work through related issues in using Redux.
+
 
 
 
